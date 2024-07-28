@@ -126,9 +126,3 @@ To build the Docker image, run the following command in the directory containing
 ```sh
 docker build -t your-image/base-guacd:main .
 ```
-
-### Troubleshoot
-
-```sh
-docker run --rm --name ct_guacd --hostname guacd -p 8080:8080 your-image/base-guacd:main
-```
