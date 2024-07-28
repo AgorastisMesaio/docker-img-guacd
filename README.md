@@ -30,7 +30,7 @@ When used as a Docker container, Guacd provides several benefits and use cases:
 
 ## Sample `docker-compose.yml`
 
-This is an example where I'm running PostgreSQL in a Docker container.
+This is an example where I'm running Guacd in a Docker container.
 
 ```yaml
 ### Docker Compose example
