@@ -67,7 +67,7 @@ services:
       - my_network
 
   ct_frontend:
-    image: ghcr.io/agorastismesaio/base-guacamole:main
+    image: ghcr.io/agorastismesaio/docker-img-guacamole:main
     hostname: guacamole
     container_name: ct_frontend
     restart: always
@@ -90,7 +90,7 @@ services:
     - ct_postgres
 
   ct_postgres:
-    image: ghcr.io/agorastismesaio/base-postgres:main
+    image: ghcr.io/agorastismesaio/docker-img-postgres:main
     hostname: postgres
     container_name: ct_postgres
     restart: always
