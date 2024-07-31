@@ -1,6 +1,6 @@
 # Adminer docker container
 
-![GitHub action workflow status](https://github.com/SW-Luis-Palacios/base-guacd/actions/workflows/docker-publish.yml/badge.svg)
+![GitHub action workflow status](https://github.com/AgorastisMesaio/docker-img-guacd/actions/workflows/docker-publish.yml/badge.svg)
 
 This repository contains a `Dockerfile` aimed to create a *base image* to provide a dockerized Guacd service. Guacd is a remote desktop gateway component used by the Apache Guacamole project. It is responsible for managing remote desktop connections and translating them into a format that Guacamole clients can use. Guacd acts as a proxy between the Guacamole client and remote desktops, supporting protocols such as RDP, VNC, and SSH.
 
@@ -54,7 +54,7 @@ networks:
 
 services:
   ct_guacd:
-    image: ghcr.io/sw-luis-palacios/base-guacd:main
+    image: ghcr.io/agorastismesaio/docker-img-guacd:main
     hostname: ct_guacd
     container_name: guacd
     restart: always
@@ -67,7 +67,7 @@ services:
       - my_network
 
   ct_frontend:
-    image: ghcr.io/sw-luis-palacios/base-guacamole:main
+    image: ghcr.io/agorastismesaio/base-guacamole:main
     hostname: guacamole
     container_name: ct_frontend
     restart: always
@@ -90,7 +90,7 @@ services:
     - ct_postgres
 
   ct_postgres:
-    image: ghcr.io/sw-luis-palacios/base-postgres:main
+    image: ghcr.io/agorastismesaio/base-postgres:main
     hostname: postgres
     container_name: ct_postgres
     restart: always
@@ -124,5 +124,5 @@ If you copy or fork this project to create your own base image.
 To build the Docker image, run the following command in the directory containing the Dockerfile:
 
 ```sh
-docker build -t your-image/base-guacd:main .
+docker build -t your-image/docker-img-guacd:main .
 ```
