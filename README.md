@@ -132,3 +132,22 @@ For example, when I'm testing I do:
 ```sh
 docker compose down && docker system prune -af && docker build -t ghcr.io/agorastismesaio/docker-img-guacd:main .
 ```
+
+## Fix to "Health:starting"
+
+I was struggling with a rare issue. When I run "docker run --rm guacamole/guacd" it works perfect. However, when I check with "docker ps -a" I observe one issue: the STATUS of the container is "health: starting" for very long time; however the container is fully up and running.
+
+With `docker inspect <id>` I found this, which looks like too big timeouts
+
+```bash
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "nc -z 127.0.0.1 4822 || exit 1"
+                ],
+                "Interval": 300000000000,
+                "Timeout": 5000000000
+            },
+```
+
+So, that's the reason for the `HEALTHCHECK` line in my Dockerfile
