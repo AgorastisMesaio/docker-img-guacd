@@ -1,4 +1,4 @@
-### Docker Compose example
+## Docker Compose example
 volumes:
   backend_drive:
     driver: local
@@ -16,8 +16,10 @@ services:
     hostname: ct_guacd
     container_name: guacd
     restart: always
-    ports:
-      - 4822:4822
+    #ports:
+    #  - 4822:4822
+    #  - 9001:9001
+    #  - 8081:80
     volumes:
     - backend_drive:/drive
     - backend_record:/var/lib/guacamole/recordings

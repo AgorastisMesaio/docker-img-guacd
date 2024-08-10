@@ -126,3 +126,9 @@ To build the Docker image, run the following command in the directory containing
 ```sh
 docker build -t your-image/docker-img-guacd:main .
 ```
+
+For example, when I'm testing I do:
+
+```sh
+docker compose down && docker system prune -af && docker build -t ghcr.io/agorastismesaio/docker-img-guacd:main .
+```
