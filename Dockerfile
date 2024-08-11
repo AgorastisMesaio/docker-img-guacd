@@ -3,7 +3,7 @@
 # This Dockerfile sets up a standard Guacd container that you can use
 # inside your docker compose projects or standalone.
 #
-FROM guacamole/guacd:latest
+FROM guacamole/guacd:1.5.5
 
 # Add a custom health check
 # In this example, we'll check if port 4822 (default guacd port) is open and listening
